@@ -27,19 +27,16 @@ Route::get('/contact', function () {
 });
 */
 
-
+Route::get('/contact', [App\Http\Controllers\GuestController::class, 'contact'])->name('contact');
 
 Auth::routes();
-
-
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 
 
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'Welcome'])->name('Welcome');
+Route::get('/welcome', [App\Http\Controllers\GuestController::class, 'Welcome'])->name('Welcome');
 
 
 Route::group(['middleware' => ['auth']], function () {

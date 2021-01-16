@@ -88,9 +88,11 @@
 --}}
 
     <!doctype html>
+<title>AdkovaGameDatabase</title>
 
 <head>
     <link href="{{asset('css/me.css')}}" rel="stylesheet">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -189,15 +191,15 @@
 
 
         </ul>
-        {{-- <ul class="nav navbar-nav navbar-right">
+{{--
+         <ul class="nav navbar-nav navbar-right">
              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
          </ul>
- --}}
 
-{{--
+--}}
 
-        @if (Route::has('login'))
+       {{-- @if (Route::has('login'))
             <ul class="text-right">
                 @auth
 
@@ -209,8 +211,7 @@
                     @endif
                 @endauth
             </ul>
-        @endif
---}}
+        @endif--}}
 
     </div>
         </ul>
