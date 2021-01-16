@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +17,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome');
 });
 
 
-
+/*
+Route::get('/contact', function () {
+    return view('user.contact');
+});
+*/
 
 
 
 Auth::routes();
 
+
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+
+
+
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'Welcome'])->name('Welcome');
+
+
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);
     Route::get('user/{user}/delete', [UserController::class, 'destroy'])->name('user.delete');

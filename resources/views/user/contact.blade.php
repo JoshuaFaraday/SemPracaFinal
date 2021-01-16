@@ -1,5 +1,6 @@
+@extends('layouts.app')
+@section('content')
 
-<body>
 
 <div class="contact">
 
@@ -19,5 +20,4 @@
     </div>
 </div>
 
-</body>
-</html>
+@endsection
