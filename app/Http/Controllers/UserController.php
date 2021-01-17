@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Aginev\Datagrid\Datagrid;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -22,9 +23,14 @@ class UserController extends Controller
         ->setColumn('email','Email Address')
             ->setActionColumn([
                 'wrapper' => function ($value, $row) {
-                return '<a href="' . route('user.edit', [$row->id]) . '" title="Edit" class="btn btn-sn btn-primary">Edit</a>
-                        <a href="' .route('user.delete',$row->id). '" title="Delete" data-method="DELETE" class="btn btn-sn btn-danger" data-confirm="Are you sure?">Delete</a>';
-            }
+                    if (Auth::user()->email === 'Admin@stranka.sk') {
+
+                        return '<a href="' . route('user.edit', [$row->id]) . '" title="Edit" class="btn btn-sn btn-primary">Edit</a>
+                        <a href="' . route('user.delete', $row->id) . '" title="Delete" data-method="DELETE" class="btn btn-sn btn-danger" data-confirm="Are you sure?">Delete</a>';
+                    } elseif (Auth::user()->email === $row->emaiil) {
+                        return '<a href="' . route('user.edit', [$row->id]) . '" title="Edit" class="btn btn-sn btn-primary">Edit</a>';
+                    }
+                }
             ]);
         return view('user.index', ['grid' =>$grid] );
     }

@@ -1,7 +1,10 @@
+@extends('layouts.app')
+@section('content')
 
-<body>
 
-<div class="background">
+    <body>
+
+{{--<div class="background">--}}
     <div class="ml-4" >
         We love games, we grew up with games and now we are doing our dream: working professionally with games.
 
@@ -24,8 +27,9 @@
         We wish to create Your ultimate gaming website.
     </div>
 
+
     <div class="container mt-5">
-        <div class="row">
+        <div class="row-2">
             <div class="col-10">
 
                 <div id="demo" class="carousel slide" data-ride="carousel">
@@ -41,15 +45,15 @@
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="ukazka/img/the-last-of-us-joel-survivors.jpg" alt="joel" width="880" height="500" class="img-fluid">
+                            <img src="img/the-last-of-us-joel-survivors.jpg" alt="joel" width="880" height="500" class="img-fluid">
                         </div>
                         <div class="carousel-item">
-                            <img src="ukazka/img/mafia-definitive-edition-review.jpg" alt="mafiade" width="880" height="500" class="img-fluid">
+                            <img src="img/mafia-definitive-edition-review.jpg" alt="mafiade" width="880" height="500" class="img-fluid">
                         </div>
                         <div class="carousel-item">
-                            <img src="ukazka/img/league%20of%20legends%20wallpaper%2047%20-%201920x1080.jpg" alt="lol" width="880" height="500" class="img-fluid">
+                            <img src="img/league%20of%20legends%20wallpaper%2047%20-%201920x1080.jpg" alt="lol" width="880" height="500" class="img-fluid">
                         </div><div class="carousel-item">
-                            <img src="ukazka/img/valhala.jpg" alt="valhala" width="880" height="500" class="img-fluid">
+                            <img src="img/valhala.jpg" alt="valhala" width="880" height="500" class="img-fluid">
                         </div>
                     </div>
 
@@ -60,9 +64,14 @@
                     <a class="carousel-control-next" href="#demo" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+
+
                 </div>
-            </div>
+
         </div>
     </div>
-</div>
+    </div>
+{{--</div>--}}
 </body>
+
+@endsection

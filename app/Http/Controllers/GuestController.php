@@ -16,6 +16,16 @@ class GuestController extends Controller
         return view('user.welcome');
     }
 
+    public function About()
+    {
+        return view('about');
+    }
+
+    public function HotNews()
+    {
+        return view('hotNews');
+    }
+
 
 /*    public function index()
     {
