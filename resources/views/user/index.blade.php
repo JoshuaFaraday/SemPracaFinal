@@ -13,8 +13,8 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <div class ="mb-3">
-                           {{-- tlacitko na pridanie noveho pouzivatela vdaka classe to neni link ale ukaze to ako tlacitko --}}
+                        <div class="mb-3">
+                            {{-- tlacitko na pridanie noveho pouzivatela vdaka classe to neni link ale ukaze to ako tlacitko --}}
                             <a href="{{ route('user.create') }}" class="btn btn-success" role="button">Add new user</a>
 
                         </div>

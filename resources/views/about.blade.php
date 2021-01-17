@@ -4,8 +4,8 @@
 
     <body>
 
-{{--<div class="background">--}}
-    <div class="ml-4" >
+    {{--<div class="background">--}}
+    <div class="ml-4">
         We love games, we grew up with games and now we are doing our dream: working professionally with games.
 
         We do this by...
@@ -19,12 +19,7 @@
             Focusing on our users and let them decide on the design and features.
         </p>
 
-        This is IGDB.com, a gaming website for everyone that loves game. And if you love games as well, we are the
-        gaming website for you.
 
-        Our End Game
-
-        We wish to create Your ultimate gaming website.
     </div>
 
 
@@ -45,14 +40,18 @@
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/the-last-of-us-joel-survivors.jpg" alt="joel" width="880" height="500" class="img-fluid">
+                            <img src="img/the-last-of-us-joel-survivors.jpg" alt="joel" width="880" height="500"
+                                 class="img-fluid">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/mafia-definitive-edition-review.jpg" alt="mafiade" width="880" height="500" class="img-fluid">
+                            <img src="img/mafia-definitive-edition-review.jpg" alt="mafiade" width="880" height="500"
+                                 class="img-fluid">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/league%20of%20legends%20wallpaper%2047%20-%201920x1080.jpg" alt="lol" width="880" height="500" class="img-fluid">
-                        </div><div class="carousel-item">
+                            <img src="img/league%20of%20legends%20wallpaper%2047%20-%201920x1080.jpg" alt="lol"
+                                 width="880" height="500" class="img-fluid">
+                        </div>
+                        <div class="carousel-item">
                             <img src="img/valhala.jpg" alt="valhala" width="880" height="500" class="img-fluid">
                         </div>
                     </div>
@@ -68,10 +67,22 @@
 
                 </div>
 
+            </div>
         </div>
     </div>
+
+    <div class="ml-4">
+
+
+        This is IGDB.com, a gaming website for everyone that loves game.
+        And if you love games as well, we are the
+        gaming website for you.
+        <p>
+            Our End Game
+
+            We wish to create Your ultimate gaming website.
+        </p>
     </div>
-{{--</div>--}}
-</body>
+    </body>
 
 @endsection

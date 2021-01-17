@@ -27,7 +27,7 @@ class UserController extends Controller
 
                         return '<a href="' . route('user.edit', [$row->id]) . '" title="Edit" class="btn btn-sn btn-primary">Edit</a>
                         <a href="' . route('user.delete', $row->id) . '" title="Delete" data-method="DELETE" class="btn btn-sn btn-danger" data-confirm="Are you sure?">Delete</a>';
-                    } elseif (Auth::user()->email === $row->emaiil) {
+                    } elseif (Auth::user()->email == $row->email) {
                         return '<a href="' . route('user.edit', [$row->id]) . '" title="Edit" class="btn btn-sn btn-primary">Edit</a>';
                     }
                 }
