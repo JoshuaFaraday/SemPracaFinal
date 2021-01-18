@@ -1,14 +1,21 @@
+<div class="form-group text-danger">
+    @foreach($errors->all() as $error)
+        {{ $error }}<br>
+    @endforeach
+</div>
+
+
 
 <form method="post" action ="{{$action}}"> {{--premenna zavisi ci budeme vytvarat noveho uzivatela alebo editovat existujuceho--}}
     @csrf {{--ochrana formulara aby sa to nedalo poslat inym sposobom--}}
     @method($method) {{--metoda ktorou sa čo bude posielat--}}
     <div class="form-group">
         <label for="name">Full name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Full name" value="{{ @$model->name  }}">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Full name" value="{{old('name', @$model->name)  }}">
     </div>
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" value="{{old('name',  @$model->email)  }}">
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email" value="{{old('email',  @$model->email)  }}">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
 

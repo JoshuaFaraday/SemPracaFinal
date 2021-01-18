@@ -91,6 +91,7 @@
 <title>AdkovaGameDatabase</title>
 
 <head>
+
     <link href="{{asset('css/me.css')}}" rel="stylesheet">
 
     <meta charset="utf-8">
@@ -119,14 +120,23 @@
 
 
 </head>
+
 <body>
+
+<style>
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+</style>
 
 <nav class="navbar navbar-expand bg-dark navbar-dark ">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand img-fluid" href="{{route('Welcome')}}">
                 <img src="img/game__storage__play__server__database-512.png" alt="database">
-            </a>
+             {{--   <a href="{{route('Welcome')}}"><img src="{{asset('img/game__storage__play__server__database-512.png')}}" alt=""></a>
+         --}}   </a>
 
 
         </div>
@@ -138,7 +148,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{route('hotNews')}}">Hot news</a>
+                <a class="nav-link" href="{{route('hotNews')}}">News</a>
             </li>
 
 
@@ -152,7 +162,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="?c=blog">Reviews</a>
+                <a class="nav-link" href="{{route('reviews.index')}}">Reviews</a>
             </li>
 
 
@@ -162,7 +172,7 @@
                     @auth
                         <a class="nav-link" href="{{ route('user.index') }}">{{ __('Users') }}</a>
                         <li class="nav-item">
-                            <a class="nav-link" href="?c=blog&a=add">Add Review</a>
+                            <a class="nav-link" href="{{ route('reviews.create') }}">Add Review</a>
                         </li>
                     @endauth
 

@@ -3,7 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,13 @@ Route::get('/contact', [App\Http\Controllers\GuestController::class, 'contact'])
 Route::get('/about', [App\Http\Controllers\GuestController::class, 'About'])->name('about');
 Route::get('/hotNews', [App\Http\Controllers\GuestController::class, 'HotNews'])->name('hotNews');
 /*Route::get('user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');*/
+/*Route::resource('reviews', ReviewsController::class);*/
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('reviews', ReviewsController::class);
+    Route::get('reviews/{reviews}/delete', [ReviewsController::class, 'destroy'])->name('reviews.delete');
+});
+
 
 
 Auth::routes();
@@ -40,7 +47,6 @@ Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/welcome', [App\Http\Controllers\GuestController::class, 'Welcome'])->name('Welcome');
 
 

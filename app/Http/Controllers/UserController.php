@@ -58,6 +58,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'name' => 'required',
+           'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8|confirmed'
+       ]);
 
         $users = USER::create($request->all());
         $users->save();
@@ -101,10 +106,14 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
-
-
         $user->update($request->all());
+
+        $request->validate([
+           'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'required|min:8|confirmed'
+       ]);
+
         return redirect()->route('user.index');
     }
 
@@ -119,4 +128,9 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('user.index');
     }
+
+/*    public function getName(User $id)
+    {
+        return select()->route('name');
+    }*/
 }
