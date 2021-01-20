@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Add new user') }}</div>
+                    <div class="card-header">{{ __('Add new card') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,13 +14,10 @@
                             </div>
                         @endif
 
-                        @include('user.form')
+                        @include('gallery.form')
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 @endsection

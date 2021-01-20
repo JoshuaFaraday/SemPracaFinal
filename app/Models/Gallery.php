@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 
-class Reviews extends Authenticatable
+class Gallery extends User
 {
-    protected $table="reviews";
     use HasFactory, Notifiable;
 
     /**
@@ -18,9 +18,10 @@ class Reviews extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'popis',
+        'cesta',
+        'title',
         'text',
-        'hodnotenie',
+        'citanicko',
     ];
 
 }

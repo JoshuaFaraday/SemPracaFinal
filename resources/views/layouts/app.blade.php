@@ -88,7 +88,7 @@
 --}}
 
     <!doctype html>
-<title>AdkovaGameDatabase</title>
+<title>GameDatabase</title>
 
 <head>
 
@@ -103,7 +103,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+   <script src="resources/js/app.js"></script>
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -134,23 +137,16 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand img-fluid" href="{{route('Welcome')}}">
-                <img src="img/game__storage__play__server__database-512.png" alt="database">
-             {{--   <a href="{{route('Welcome')}}"><img src="{{asset('img/game__storage__play__server__database-512.png')}}" alt=""></a>
-         --}}   </a>
-
-
+                <img src="{{asset('img/game__storage__play__server__database-512.png')}}" alt="database"></a>
         </div>
         <ul class="nav navbar-nav">
-
 
             <li class="nav-item">
                 <a class="nav-link text-sm-left" href="{{route('Welcome')}}">Home</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="{{route('hotNews')}}">News</a>
+                <a class="nav-link" href="{{route('gallery.index')}}">News</a>
             </li>
-
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('contact')}}">Contact</a>

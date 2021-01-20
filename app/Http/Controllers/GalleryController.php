@@ -2,23 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Aginev\Datagrid\Datagrid;
+
+use App\Models\Gallery;
+use http\Client\Request;
 use App\Models\Reviews;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ReviewsController extends Controller
-{
+
+class GalleryController extends Controller
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
+{
     public function index()
     {
-        $reviews = Reviews::all()->toArray();
-        return view('reviews.index', compact('reviews'));
+        $gallery = Gallery::all()->toArray();
+        return view('gallery.index', compact('gallery'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -27,8 +32,8 @@ class ReviewsController extends Controller
      */
     public function create()
     {
-        return view('reviews.create', [
-            'action' => route('reviews.store'),
+        return view('gallery.create', [
+            'action' => route('gallery.store'),
             'method' => 'post'
 
 
@@ -44,10 +49,10 @@ class ReviewsController extends Controller
     public function store(Request $request)
     {
 
-        $reviews = Reviews::create($request->all());
-        $reviews->AuthorID = Auth::user()->id;
-        $reviews->save();
-        return redirect()->route('reviews.index');
+        $galleries = Gallery::create($request->all());
+        $galleries->AuthorID = Auth::user()->id;
+        $galleries->save();
+        return redirect()->route('galleries.index');
     }
 
     /**
@@ -67,14 +72,13 @@ class ReviewsController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Gallery $gallery)
     {
-        $review=Reviews::find($id);
-        return view('reviews.edit', [
 
-            'action' => route('reviews.update',$review->id),
+        return view('gallery.edit', [
+            'action' => route('gallery.update',$gallery->id),
             'method' => 'put',
-            'model' => $review
+            'model' => $gallery
 
         ]);
     }
@@ -86,10 +90,10 @@ class ReviewsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Reviews $reviews)
+    public function update(Request $request, Gallery $gallery)
     {
-        $reviews->update($request->all());
-        return redirect()->route('reviews.index');
+        $gallery->update($request->all());
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -98,9 +102,18 @@ class ReviewsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Reviews $reviews)
+    public function destroy(Gallery $gallery)
     {
-        $reviews->delete();
-        return redirect()->route('reviews.index');
+        $gallery->delete();
+        return redirect()->route('gallery.index');
     }
+
+    public function Zobrazclanok()
+    {
+        return redirect()->route('views.gallery.zobrazclanok');
+    }
+
+
+
+
 }

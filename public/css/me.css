@@ -16,7 +16,7 @@
     font-size: large;
 }
 
-
+/*
 .background {
 
     background-color: black;
@@ -26,35 +26,20 @@
     height: 100vh;
     color: white;
 
-}
-
-.contact {
-    margin-top: fill;
-    background-size: cover !important; ;
-    color: firebrick;
-    text-align: center;
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-
-}
+}*/
 
 
+/*
 .card {
-    background-size: cover;
-/*    color: firebrick;*/
-    background-color: black;
+    width: 315px;
+    height: 330px;
+!*    color: firebrick;*!
     align-content: center;
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
 }
-
-
-
-
-
-
+*/
 
 #content{
     width: 50%;
